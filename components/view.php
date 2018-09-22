@@ -19,10 +19,12 @@ class View {
 
         $this->content = $this->getRenderHTML('views/' . $mainView);
 
-        include 'views/layouts/' . $templateView;
+
+        include 'views/' . $templateView;
 
     }
     public function getRenderHTML($path) {
+        //var_dump($path);die;
         ob_start();
         include ($path);
         $var = ob_get_contents();

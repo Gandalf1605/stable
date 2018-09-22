@@ -25,13 +25,13 @@ class Router {
 
         foreach ($this->routes as $uriPattern => $path) {
             if (preg_match("~$uriPattern~", $uri)) {
-                $internalRoute = preg_replace("~$uriPattern~", $path, $uri); // получаем строку адреса в нужном нам виде
+                $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
                 //var_dump($internalRoute);die;
-                $segments = explode('/', $internalRoute); // разбиваем строку адреса на части в массив
+                $segments = explode('/', $internalRoute);
 
-                $controllerName = ucfirst(array_shift($segments) . 'Controller'); // первый элемент массива берём в имя контроллера
-
-                $actionName = 'action' . ucfirst(array_shift($segments)); // второй элемент массива берём в имя экшена-обработчика
+                $controllerName = ucfirst(array_shift($segments) . 'Controller');
+                //var_dump($controllerName);die;
+                $actionName = 'action' . ucfirst(array_shift($segments));
                 //var_dump($actionName);die;
                 $parameters = $segments;
 

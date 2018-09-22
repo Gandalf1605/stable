@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" href="/template/images/favicon.ico">
+    <link rel="shortcut icon" href="/template/images/favicon.ico" />
+    <link rel="stylesheet" href="/template/css/style.css">
+    <script src="/template/js/jquery.js"></script>
+    <script src="/template/js/jquery-migrate-1.1.1.js"></script>
+    <script src="/template/js/jquery.easing.1.3.js"></script>
+    <script src="/template/js/script.js"></script>
+    <script src="/template/js/superfish.js"></script>
+    <script src="/template/js/jquery.equalheights.js"></script>
+    <script src="/template/js/jquery.mobilemenu.js"></script>
+    <script src="/template/js/tmStickUp.js"></script>
+    <script src="/template/js/jquery.ui.totop.js"></script>
+    <script>
+        $(window).load(function(){
+            $().UItoTop({ easingType: 'easeOutQuart' });
+            $('#stuck_container').tmStickUp({});
+        });
+    </script>
+    <!--[if lt IE 8]>
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+    </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="/template/js/html5shiv.js"></script>
+    <link rel="stylesheet" media="screen" href="css/ie.css">
+    <![endif]-->
+</head>
+<body>
+<!--==============================
+              header
+=================================-->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="grid_12 rel">
+                <h1>
+                    <a href="index.html">
+                        <img src="/template/images/logo.png" alt="Logo alt">
+                    </a>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <section id="stuck_container">
+        <!--==============================
+                    Stuck menu
+        =================================-->
+        <div class="container">
+            <div class="row">
+                <div class="grid_12 ">
+                    <div class="navigation ">
+                        <nav>
+                            <ul class="sf-menu">
+                                <li><a href="index">Главная страница</a></li>
+                                <li class="current"><a href="about">О компании</a></li>
+                                <li><a href="services">Наши услуги</a></li>
+                                <li><a href="blog">Блог</a></li>
+                                <li><a href="contacts">Контакты</a></li>
+                            </ul>
+                        </nav>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+<!--=====================
+          Content
+======================-->
+<section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - July 28, 2014!</div>
+    <div class="container">
+        <div class="row">
+            <div class="grid_12">
+                <h3>Про нас</h3>
+                <img src="/template/images/page2_img.jpg" alt="" class="img_inner fleft">
+                <div class="extra_wrapper">
+                    <p class="fwn"><a href="#">Компанія IT-Enterprise понад 30 років в займається впровадженням ІТ-рішень для автоматизації бізнес-процесів на підприємствах різних напрямів діяльності і має значний досвід розробок і впровадження найскладніших ERP-систем.
+
+                            Рішеннями компанії IT-Enterprise користуються найбільші підприємства України:
+
+                            в приватному секторі: Interpipe, Ferrexpo, ROSHEN, FED, Ковальська, МХП, Укрнафта, Южмаш, Фармак і багато інших.
+                            в державному секторі: ДП “Антонов", ДП "ХМЗ"ФЕД", Укроборонпром, Міністерство інфраструктури, Міністерство освіти і науки, Міністерство фінансів, Національна академія аграрних наук, Кабінет Міністрів України і багато інших.
+                            На базі досвіду розробок і впровадження кращих рішень IT-Enterprise на підприємствах-флагманах українського бізнесу створені програмні продукти MASTER для підприємств малого та середнього бізнесу та бюджетних установ України.
+                </div>
+            </div>
+        </div>
+    </div>
+    <article class="content_gray offset__1">
+        <div class="container">
+            <div class="row">
+                <div class="grid_12">
+                    <h3>Що ми пропонуємо</h3>
+                </div>
+                <?foreach ($this->offersNews as $offers):?>
+                <div class="grid_7">
+                    <div class="block-3">
+                        <div class="count"><?=$offers['offer_id']?></div>
+                        <div class="extra_wrapper">
+                            <div class="text2"><a href="#"><?=$offers['offers_title']?></a></div>
+                            <p><?=$offers['offer_description']?></p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <?endforeach;?>
+
+
+            </div>
+
+        </div>
+    </article>
+    <div class="container">
+        <div class="row">
+            <div class="grid_12">
+                <h3>Наша команда</h3>
+            </div>
+            <?foreach ($this->employeesNews as $employees):?>
+            <div class="grid_2">
+                <img src="<?=$employees['photo']?>" alt="" class="bord_img">
+                <div class="text2"><a href="#"><?=$employees['first_name']?> <?=$employees['last_name']?></a></div>
+                <?=$employees['description']?>
+            </div>
+            <?endforeach;?>
+
+        </div>
+    </div>
+</section>
+<!--==============================
+              footer
+=================================-->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="grid_12">
+                <div class="copyright"><span class="brand">Stable</span> &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a>
+                    <div class="sub-copy">Website designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<a href="#" id="toTop" class="fa fa-chevron-up"></a>
+</body>
+</html>

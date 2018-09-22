@@ -22,7 +22,7 @@ class IndexController extends Controller {
             $this->view->topNews = $this->newsModel->getTopNews();
             $this->view->lastNews = $this->newsModel->getLastNews();
             $this->view->commentNews = $this->newsModel->getNewsComments();
-            $this->view->generate('template_view.phtml', 'layouts/main_view.phtml');
+            $this->view->generate('layouts/main_view.phtml', 'layouts/template_view.phtml');
         } catch (Exception $e) {
             echo $e->getMessage();
         }
