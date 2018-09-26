@@ -26,11 +26,9 @@ class BlogController extends Controller
 
                 $this->newsModel->setBlog($_POST['text'], $_POST['author'], $_POST['email'], $_POST['text']);
             }
-            //$this->view->topNews = $this->newsModel->getTopNews();
-            //$this->view->lastNews = $this->newsModel->getLastNews();
-            //$this->view->commentNews = $this->newsModel->getNewsComments();
+
             $this->view->blogGet = $this->newsModel->getBlog();
-            //$this->view->employeesNews = $this->newsModel->getEmployees();
+
 
             $this->view->generate('layouts/main_view.phtml', 'blog/blog.phtml');
 
