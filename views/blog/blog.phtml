@@ -85,7 +85,10 @@
                 <h3>Наш блог</h3>
                 <?foreach ($this->blogGet as $blogs):?>
                 <div class="blog">
-                    <time datetime="2014-01-01"><span class="count">2</span><strong>July</strong>2014</time>
+                    <time datetime="2014-01-01"><span class="count"><? $new_datetime = DateTime::createFromFormat ( "Y-m-d H:i:s", $blogs['date']);
+                            echo $new_datetime->format('d') ?></span><strong><? $new_datetime = DateTime::createFromFormat ( "Y-m-d H:i:s", $blogs['date']);
+                            echo $new_datetime->format('M') ?></strong><? $new_datetime = DateTime::createFromFormat ( "Y-m-d H:i:s", $blogs['date']);
+                        echo $new_datetime->format('Y') ?></time>
                     <img src="<?=$blogs['photo']?>" alt="" class="img_inner fleft">
                     <div class="extra_wrapper">
                         <a href="#" class="comment"><span class="fa fa-comments"></span> <?=$blogs['comment_number']?></a>

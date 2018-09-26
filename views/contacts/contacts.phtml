@@ -117,34 +117,25 @@
                     <p>If you have problems with customization of freebies, ask guys from <a href="http://www.templatetuning.com/" rel="nofollow" class="color1">TemplateTuning</a> to help you.</p>
                     Aliquam nibh ante, egestas id dictum a, commodo luctus liberoret. Praesenter faucibus malesuada faucibus. Donec laoreet metus id laoreet malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed nulla facilisis consequa.
                 </div>
-                <form id="contact-form">
-                    <div class="contact-form-loader"></div>
-                    <fieldset>
-                        <label class="name">
-                            <input type="text" name="author" placeholder="Автор:" value="" data-constraints="@Required @JustLetters"  />
-                            <span class="empty-message">*This field is required.</span>
-                            <span class="error-message">*This is not a valid name.</span>
-                        </label>
+            <form name="add post" method="post" action="/blog"
+            <fieldset>
 
-                        <label class="email">
-                            <input type="text" name="email" placeholder="E-mail:" value="" data-constraints="@Required @Email" />
-                            <span class="empty-message">*This field is required.</span>
-                            <span class="error-message">*This is not a valid email.</span>
-                        </label>
+                <label class="name">
+                    <input type="text" name="author" placeholder="Автор:">
+                </label>
 
+                <label class="email">
+                    <input type="email" name="email" placeholder="Email:">
+                </label>
 
-                        <label class="message">
-                            <textarea name="full_text" placeholder="Повідомлення:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
-                            <span class="empty-message">*This field is required.</span>
-                            <span class="error-message">*The message is too short.</span>
-                        </label>
-                        <div class="clear"></div>
-                        <div>
-                            <input type="submit" name="submit" class="accent" value="Готово">
-                        </div>
-                    </fieldset>
+                <label class="message">
+                    <input type="text" name="text" placeholder="Введите текст" size="100">
+                </label>
 
-                </form>
+            </fieldset>
+                <input type="submit" name="submit" value="Готово">
+            </form>
+
             </div>
         </div>
     </div>

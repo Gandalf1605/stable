@@ -19,10 +19,11 @@ class Model_Blog extends Db
         return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function setBlog($text, $author, $email) {
-        $sql = $this->connection->prepare("INSERT INTO `blog`(`text`, `author`, `email`, 
-                                  ) VALUES (:text, :author, :email)");
+    public function setBlog($text, $author, $email, $fulltext) {
+        $sql = $this->connection->prepare("INSERT INTO `blog`(`text`, `author`, `email`, `comment_number`, `full_text`
+                                  ) VALUES (:text, :author, :email, 0, :fulltext)");
         $sql->bindParam(':text', $text, PDO::PARAM_STR);
+        $sql->bindParam(':fulltext',$fulltext, PDO::PARAM_STR);
         $sql->bindParam(':author', $author, PDO::PARAM_STR);
         $sql->bindParam(':email', $email, PDO::PARAM_STR);
 

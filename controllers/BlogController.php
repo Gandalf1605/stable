@@ -20,6 +20,12 @@ class BlogController extends Controller
     }
     public function actionBlog() {
         try {
+            //var_dump($_POST); die;
+            if (isset($_POST['submit'])) {
+
+
+                $this->newsModel->setBlog($_POST['text'], $_POST['author'], $_POST['email'], $_POST['text']);
+            }
             //$this->view->topNews = $this->newsModel->getTopNews();
             //$this->view->lastNews = $this->newsModel->getLastNews();
             //$this->view->commentNews = $this->newsModel->getNewsComments();
@@ -27,6 +33,7 @@ class BlogController extends Controller
             //$this->view->employeesNews = $this->newsModel->getEmployees();
 
             $this->view->generate('layouts/main_view.phtml', 'blog/blog.phtml');
+
         } catch (Exception $e) {
             echo $e->getMessage();
         }
